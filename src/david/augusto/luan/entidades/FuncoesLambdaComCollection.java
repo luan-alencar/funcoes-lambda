@@ -1,6 +1,8 @@
 package david.augusto.luan.entidades;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class FuncoesLambdaComCollection {
@@ -34,6 +36,23 @@ public class FuncoesLambdaComCollection {
 		list3.forEach(n -> System.out.println(n * n));
 		System.out.println("---------------------------------------------" + "\n");
 
+		System.out.println("---------------------------------------------" + "\n");
+		System.out.println("Ordenação");
+		System.out.println("---------------------------------------------" + "\n");
+		System.out.println("Ordenando pessoas pelo nome:");
+		List<Pessoa> list4 = Arrays.asList(new Pessoa("Luan", 24), new Pessoa("Beltrano", 20),
+				new Pessoa("Welinton", 78), new Pessoa("Amanda", 20), new Pessoa("Bruna", 23),
+				new Pessoa("Gabriela", 50));
+		// Ordenando a lista com a interface Comparator
+		Collections.sort(list4, new Comparator<Pessoa>() {
+			@Override
+			public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+				// Ordenando a lista pela ordem Alfabética comparando cada elemento
+				return pessoa1.getNome().compareTo(pessoa2.getNome());
+			}
+		}); // Imprimindo a função lambda ordenada em ordem Alfabética!
+		list4.forEach(n -> System.out.println(n.getNome()));
+		System.out.println("---------------------------------------------" + "\n");
 	}
 
 }
