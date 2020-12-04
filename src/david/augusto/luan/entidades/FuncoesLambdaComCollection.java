@@ -44,22 +44,15 @@ public class FuncoesLambdaComCollection {
 				new Pessoa("Welinton", 78), new Pessoa("Amanda", 92), new Pessoa("Bruna", 23),
 				new Pessoa("Gabriela", 1));
 		// Ordenando a lista com a interface Comparator
-		Collections.sort(list4, new Comparator<Pessoa>() {
-			@Override
-			public int compare(Pessoa pessoa1, Pessoa pessoa2) {
-				// Ordenando a lista pela ordem Alfabética comparando cada elemento
-				return pessoa1.getNome().compareTo(pessoa2.getNome());
-			}
-		}); // Imprimindo a função lambda ordenada em ordem Alfabética!
+		Collections.sort(list4, (Pessoa pessoa1, Pessoa pessoa2) 
+		-> pessoa1.getNome().compareTo(pessoa2.getNome()));
+		// Imprimindo a função lambda ordenada em ordem Alfabética!
 		list4.forEach(n -> System.out.println(n.getNome()));
+		
 		System.out.println("\nOrdenando pessoas pela idade:");
-		Collections.sort(list4, new Comparator<Pessoa>() {
-			@Override
-			public int compare(Pessoa pessoa1, Pessoa pessoa2) {
-				// Ordenando a lista pela idade em asc comparando cada elemento
-				return pessoa1.getIdade().compareTo(pessoa2.getIdade());
-			}
-		}); // Imprimindo a função lambda ordenada em ordem de idade em ASC!
+		Collections.sort(list4, (Pessoa pessoa1, Pessoa pessoa2) 
+		-> pessoa1.getIdade().compareTo(pessoa2.getIdade()));
+		// Imprimindo a função lambda ordenada em ordem de idade em ASC!
 		list4.forEach(n -> System.out.println(n.getNome()));
 		System.out.println("---------------------------------------------" + "\n");
 	}
