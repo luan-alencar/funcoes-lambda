@@ -1,6 +1,6 @@
 package david.augusto.luan.entidades;
 
-public class Lambdas {
+public class FuncoesLambdaComThreads {
 
 	public static void main(String[] args) {
 
