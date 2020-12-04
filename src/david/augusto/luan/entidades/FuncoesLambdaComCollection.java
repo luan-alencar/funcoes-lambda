@@ -18,6 +18,7 @@ public class FuncoesLambdaComCollection {
 			if (i % 2 == 0) {
 				System.out.println(i);
 			}
+
 		});
 
 		System.out.println("---------------------------------------------" + "\n");
@@ -29,5 +30,16 @@ public class FuncoesLambdaComCollection {
 
 		System.out.println("---------------------------------------------" + "\n");
 
+		System.out.println("---------------------------------------------" + "\n");
+
+		System.out.println("Integer");
+		System.out.println("---------------------------------------------" + "\n");
+		System.out.println("Imprime o quadrado de todos os elementos da lista!");
+		List<Integer> list3 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		list3.forEach(n -> System.out.println(n * n));
+
+		System.out.println("---------------------------------------------" + "\n");
+
 	}
+
 }
