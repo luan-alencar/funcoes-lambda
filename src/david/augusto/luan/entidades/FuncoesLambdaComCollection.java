@@ -2,7 +2,6 @@ package david.augusto.luan.entidades;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class FuncoesLambdaComCollection {
@@ -44,17 +43,15 @@ public class FuncoesLambdaComCollection {
 				new Pessoa("Welinton", 78), new Pessoa("Amanda", 92), new Pessoa("Bruna", 23),
 				new Pessoa("Gabriela", 1));
 		// Ordenando a lista com a interface Comparator
-		Collections.sort(list4, (Pessoa pessoa1, Pessoa pessoa2) 
-		-> pessoa1.getNome().compareTo(pessoa2.getNome()));
+		Collections.sort(list4, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
 		// Imprimindo a função lambda ordenada em ordem Alfabética!
 		list4.forEach(n -> System.out.println(n.getNome()));
-		
+
 		System.out.println("\nOrdenando pessoas pela idade:");
-		Collections.sort(list4, (Pessoa pessoa1, Pessoa pessoa2) 
-		-> pessoa1.getIdade().compareTo(pessoa2.getIdade()));
+		// Ordenando a lista com a interface Comparator
+		Collections.sort(list4, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getIdade().compareTo(pessoa2.getIdade()));
 		// Imprimindo a função lambda ordenada em ordem de idade em ASC!
 		list4.forEach(n -> System.out.println(n.getNome()));
 		System.out.println("---------------------------------------------" + "\n");
 	}
-
 }
