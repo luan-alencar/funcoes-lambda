@@ -11,8 +11,14 @@ public class FuncoesLambdaComCollection {
 
 		System.out.println("Integer");
 		System.out.println("---------------------------------------------" + "\n");
-		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-		list.forEach(i -> System.out.println(i));
+		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		// recebe como parametro uma função lambda
+		list.forEach(i -> {
+			// que retorna todos numeros pares da iteração
+			if (i % 2 == 0) {
+				System.out.println(i);
+			}
+		});
 
 		System.out.println("---------------------------------------------" + "\n");
 
