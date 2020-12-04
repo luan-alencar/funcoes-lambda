@@ -3,9 +3,9 @@ package david.augusto.luan.entidades;
 public class Pessoa {
 
 	private String nome;
-	private int idade;
+	private Integer idade;
 
-	public Pessoa(String nome, int idade) {
+	public Pessoa(String nome, Integer idade) {
 		this.nome = nome;
 		this.idade = idade;
 	}
@@ -18,16 +18,7 @@ public class Pessoa {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public int getIdade() {
+	public Integer getIdade() {
 		return idade;
 	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
 }
