@@ -18,9 +18,14 @@ public class Lambdas {
 
 		System.out.println("---------------------------------------------" + "\n");
 
-		Runnable runnable2 = () -> System.out.println("Thread com função lambda!");
+		Runnable runnable2 = () -> System.out.println("Thread com função lambda!" + "\n");
 		new Thread(runnable2).start();
 
 		System.out.println("---------------------------------------------" + "\n");
+
+		new Thread(() -> System.out
+				.println("Thread com passagem da função diretamente como parametro para o construtor da classe"))
+						.start();
+
 	}
 }
