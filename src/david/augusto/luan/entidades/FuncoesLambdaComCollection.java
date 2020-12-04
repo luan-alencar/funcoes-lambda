@@ -53,12 +53,19 @@ public class FuncoesLambdaComCollection {
 		Collections.sort(list4, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getIdade().compareTo(pessoa2.getIdade()));
 		// Imprimindo a função lambda ordenada em ordem de idade em ASC!
 		list4.forEach(n -> System.out.println(n.getNome()));
-		
-		System.out.println("\nOrdenando pessoas pela idade:");
-		// Filtrando elementos com funções lambda
-		List<Pessoa> pessoasComMaisDe30 =list4.stream()
-				.filter(n -> n.getIdade() > 30).collect(Collectors.toList());
+
+		System.out.println("\nOrdenando pessoas com mais de 30 anos de idade:");
+		// Filtrando elementos com funções lambda criando um stream() de dados
+		List<Pessoa> pessoasComMaisDe30 = list4.stream().filter(n -> n.getIdade() > 30).collect(Collectors.toList());
 		pessoasComMaisDe30.forEach(n -> System.out.println(n.getNome()));
+		
+		System.out.println("\nOrdenando pessoas que iniciam com L:");
+		// Filtrando elementos com funções lambda para pessoas que comecem com L
+		List<Pessoa> pessoasQueComecamComL = list4
+				.stream()
+				.filter(n -> n.getNome().startsWith("L"))
+				.collect(Collectors.toList());
+		pessoasQueComecamComL.forEach(n -> System.out.println(n.getNome()));
 		System.out.println("---------------------------------------------" + "\n");
 	}
 }
