@@ -3,6 +3,7 @@ package david.augusto.luan.entidades;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FuncoesLambdaComCollection {
 
@@ -52,6 +53,12 @@ public class FuncoesLambdaComCollection {
 		Collections.sort(list4, (Pessoa pessoa1, Pessoa pessoa2) -> pessoa1.getIdade().compareTo(pessoa2.getIdade()));
 		// Imprimindo a função lambda ordenada em ordem de idade em ASC!
 		list4.forEach(n -> System.out.println(n.getNome()));
+		
+		System.out.println("\nOrdenando pessoas pela idade:");
+		// Filtrando elementos com funções lambda
+		List<Pessoa> pessoasComMaisDe30 =list4.stream()
+				.filter(n -> n.getIdade() > 30).collect(Collectors.toList());
+		pessoasComMaisDe30.forEach(n -> System.out.println(n.getNome()));
 		System.out.println("---------------------------------------------" + "\n");
 	}
 }
